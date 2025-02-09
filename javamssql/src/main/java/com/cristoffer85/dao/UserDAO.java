@@ -10,6 +10,24 @@ import java.util.List;
 
 public class UserDAO {
 
+    /* Doesn't work with SQL Server, dont know why its a longer fault search but didnt have time for it right now
+    
+    // Create table if not exists
+    public void createUsersTable() {
+        String sql = "IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='users' AND xtype='U') " +
+                     "CREATE TABLE users (" +
+                     "id BIGINT IDENTITY(1,1) PRIMARY KEY, " +
+                     "name VARCHAR(100) NOT NULL, " +
+                     "email VARCHAR(100) NOT NULL);";
+        try (Connection conn = DatabaseUtil.getConnection();
+             Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate(sql);
+            System.out.println("Users table checked and created.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }*/      
+
     // Create
     public void createUser(String name, String email) {
         String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
