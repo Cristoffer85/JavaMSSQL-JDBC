@@ -12,4 +12,4 @@ Base project implementing Java with pure JDBC connection (No spring nor JPA) aga
   
   
 ## Features
-### CRUD User against local MSSQL database
+- CRUD User against local MSSQL database
