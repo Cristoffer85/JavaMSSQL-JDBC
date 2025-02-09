@@ -1,4 +1,4 @@
-package com.cristoffer85;
+package com.cristoffer85.main;
 
 public class Main {
     public static void main(String[] args) {
