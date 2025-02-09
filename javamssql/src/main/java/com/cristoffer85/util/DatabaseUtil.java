@@ -3,7 +3,6 @@ package com.cristoffer85.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DatabaseUtil {
     static String URL = System.getenv("DB_URL");
@@ -13,6 +12,8 @@ public class DatabaseUtil {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
+
+    /* Doesn't work with SQL Server, dont know why its a longer fault search but didnt have time for it right now
 
     // Create database if not exists
     public static void createDatabase() {
@@ -25,4 +26,5 @@ public class DatabaseUtil {
             e.printStackTrace();
         }
     }
+    */
 }
