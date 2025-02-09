@@ -28,21 +28,6 @@ public class UserDAO {
         }
     }*/      
 
-    // Create
-    public void createUser(String name, String email) {
-        String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-
-        try (Connection conn = DatabaseUtil.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, name);
-            stmt.setString(2, email);
-            stmt.executeUpdate();
-            System.out.println("User created successfully.");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     // Read
     public List<User> getUsers() {
         List<User> users = new ArrayList<>();
@@ -59,6 +44,21 @@ public class UserDAO {
             e.printStackTrace();
         }
         return users;
+    }
+
+    // Create
+    public void createUser(String name, String email) {
+        String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, name);
+            stmt.setString(2, email);
+            stmt.executeUpdate();
+            System.out.println("User created successfully.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     // Update
